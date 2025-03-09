@@ -1,8 +1,8 @@
 from data.users import User
-from pages.page import Page
+from pages.base_page import BasePage
 
 
-class OrderPage(Page):
+class OrderPage(BasePage):
     address = "https://qa-scooter.praktikum-services.ru/order"
     # Placeholders
     name_placeholder = "//input[@placeholder='* Имя']"

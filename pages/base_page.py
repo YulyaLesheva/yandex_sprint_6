@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class Page:
+class BasePage:
 
     # Header
     header_order_btn = "//div[contains(@class, 'Header_Nav')]//button[text()='Заказать']"
@@ -77,3 +77,6 @@ class Page:
             return True
         except Exception:
             return False
+
+    def wait_for_new_tab(self, initial_tabs: list, timeout=10) -> None:
+        WebDriverWait(self.driver, timeout).until(lambda d: len(d.window_handles) > len(initial_tabs))

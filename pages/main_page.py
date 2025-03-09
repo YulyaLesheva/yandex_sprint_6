@@ -1,10 +1,10 @@
 from selenium.webdriver.ie.webdriver import WebDriver
 
 from tests.conftest import driver
-from pages.page import Page
+from pages.base_page import BasePage
 
 
-class MainPage(Page):
+class MainPage(BasePage):
     address = "https://qa-scooter.praktikum-services.ru/"
 
     dropdown_base_questions = "//div[@id='accordion__heading-{}']"
